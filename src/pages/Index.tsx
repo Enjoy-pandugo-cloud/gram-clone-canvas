@@ -1,11 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/Navbar";
+import { Stories } from "@/components/Stories";
+import { Post } from "@/components/Post";
+
+const posts = [
+  {
+    id: 1,
+    username: "photography_lover",
+    userImage: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    caption: "Working from my favorite spot! 💻✨ #coding #developer",
+    likes: 1234,
+  },
+  {
+    id: 2,
+    username: "tech_enthusiast",
+    userImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    caption: "Setup of the day 🖥️ #workspace #productivity",
+    likes: 2345,
+  },
+];
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="bg-instagram-bg min-h-screen">
+      <Navbar />
+      <div className="max-w-xl mx-auto pt-16 px-4">
+        <div className="my-8">
+          <Stories />
+        </div>
+        <div className="space-y-4">
+          {posts.map((post) => (
+            <Post key={post.id} {...post} />
+          ))}
+        </div>
       </div>
     </div>
   );
