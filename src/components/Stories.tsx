@@ -1,15 +1,27 @@
+import { toast } from "sonner";
+
 const stories = [
   { id: 1, username: "user1", image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7" },
   { id: 2, username: "user2", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" },
   { id: 3, username: "user3", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" },
   { id: 4, username: "user4", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c" },
+  { id: 5, username: "user5", image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" },
+  { id: 6, username: "user6", image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7" },
 ];
 
 export const Stories = () => {
+  const handleStoryClick = (username: string) => {
+    toast.info(`${username}'s story coming soon!`);
+  };
+
   return (
     <div className="flex space-x-4 p-4 bg-white border border-instagram-border rounded-lg overflow-x-auto">
       {stories.map((story) => (
-        <div key={story.id} className="flex flex-col items-center space-y-1">
+        <div 
+          key={story.id} 
+          className="flex flex-col items-center space-y-1"
+          onClick={() => handleStoryClick(story.username)}
+        >
           <div className="relative cursor-pointer">
             <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 to-pink-500 rounded-full p-[2px] animate-story-ring">
               <div className="bg-white p-[2px] rounded-full">

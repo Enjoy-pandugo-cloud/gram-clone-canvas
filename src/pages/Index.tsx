@@ -19,6 +19,14 @@ const posts = [
     caption: "Setup of the day 🖥️ #workspace #productivity",
     likes: 2345,
   },
+  {
+    id: 3,
+    username: "travel_adventures",
+    userImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    caption: "Paradise found 🌴 #travel #wanderlust",
+    likes: 3456,
+  },
 ];
 
 const Index = () => {
